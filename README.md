@@ -7,6 +7,9 @@ This assessment task requires an array of colors e.g.
 
 The target color which the player has to guess is a randomly selected color from that array.
 The names must be HTML color names. This is so that when the player successfully guesses the color it can be used for the web page background color, to show what the color actually looks like.
+
+------
+
 ![Picture1](https://github.com/dmsuzuki/ColorGuessingGame/blob/master/picture1.png)
 ![Picture2](https://github.com/dmsuzuki/ColorGuessingGame/blob/master/picture2.png)	
 ![Picture3](https://github.com/dmsuzuki/ColorGuessingGame/blob/master/picture3.png)
