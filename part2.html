@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+    <head>
+        <title>Color Guessing Game</title>
+        <meta charset="UTF-8">
+        <meta name="author" content="Dayana Miyuki Suzuki">
+        <meta name="description" content="The Hong Kong University of Science and Technology - Color Guessing Game - Part 2">
+        <meta name="keywords" content="HTML5,JavaScript">
+    </head>
+
+    <body onload="doGame()">
+        <script>
+            var colors = ["blue", "cyan", "gold", "gray", "green", "magenta", "orange", "red", "white", "yellow"];
+            var target = "",
+                guessInput = "",
+                guesses = 0,
+                finished = false,
+                myBody = document.getElementsByTagName("BODY")[0];
+
+            function doGame() {
+                var text = "I am thinking of one of these colors:\n\n" +
+                            colors.join(", ") + "\n\n" +
+                            "What color am I thinking of?";
+
+                var targetIndex = Math.floor(Math.random() * (colors.length));
+                target = colors[targetIndex]; //Random color
+
+                alert("The answer is: " + target); //Optional
+
+                while (!finished) {
+                    guessInput = prompt(text); //User input
+                    guesses++;
+                    finished = checkGuess();
+            }
+        }
+
+        function checkGuess() {
+            if (colors.indexOf(guessInput) < 0) { //Check if guessed color is not in array
+                alert("Sorry, I don't recognize your color.\n\n" + "Please try again.");
+                return false;
+            } else if (guessInput > target) {
+                alert("Sorry, your guess is not correct!\n\n" +
+                    "Hint: your color is alphabetically higher than mine.\n\n" +
+                    "Please try again.");
+                return false;
+            } else if (guessInput < target) {
+                alert("Sorry, your guess is not correct!\n\n" +
+                    "Hint: your color is alphabetically lower than mine.\n\n" +
+                    "Please try again.");
+                return false;
+            } else {
+                myBody.style.background = target; //Change the background color
+                setTimeout(function(){alert("Congratulations! " +
+                        "You have guessed the color!\n\n" + "It took you " + 
+                        guesses + " guesses to finish the game!\n\n" +
+                        "You can see the colour in the background.");},150);
+                return true;
+            }
+        }
+        </script>
+    </body>
+</html>
