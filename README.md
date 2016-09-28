@@ -1,4 +1,4 @@
-# Dating Web Site
+# Color Guessing Game
 
 ### Tecnical Overview
 This assessment task requires an array of colors e.g. 
